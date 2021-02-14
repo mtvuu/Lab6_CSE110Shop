@@ -13,7 +13,7 @@ async function fetchProducts() {
     products = JSON.parse(localStorage.getItem('products'));
   }
   if (localStorage.getItem('cart') == null) {
-    localStorage.setItem('cart', "{}");
+    localStorage.setItem('cart', new Array(products.length).fill(0).toString());
   }
   for (const product in products) {
     addProduct(products[product]);

@@ -3,7 +3,7 @@
 class ProductItem extends HTMLElement {
   constructor() {
     super();
-    
+
     let item = document.createElement("li");
     item.setAttribute("class", "product");
 
@@ -25,26 +25,26 @@ class ProductItem extends HTMLElement {
         cart[this.id - 1] = "0";
         localStorage.setItem('cart', cart);
         button.innerHTML = "Add to Cart";
-        cartCount.textContent - parseInt(cartCount.textContent) - 1;
+        cartCount.textContent = parseInt(cartCount.textContent) - 1;
         alert('Removed Item from Cart');
       } 
       else {
         cart[this.id - 1] = "1";
         localStorage.setItem("cart", cart);
         button.innerHTML = "Remove from Cart";
-        cartCount.textContent - parseInt(cartCount.textContent) + 1;
+        cartCount.textContent = parseInt(cartCount.textContent) + 1;
         alert('Added Item to Cart');
       }
     };
-
-    const style = document.createElement("link");
-    style.setAttribute("rel", "stylesheet");
-    style.setAttribute("href", "styles/styles.css");
 
     item.appendChild(image);
     item.appendChild(title);
     item.appendChild(price);
     item.appendChild(button);
+
+    const style = document.createElement("link");
+    style.setAttribute("rel", "stylesheet");
+    style.setAttribute("href", "styles/styles.css");
     shadow.appendChild(style);
     shadow.appendChild(item);
   }
