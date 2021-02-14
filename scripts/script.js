@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
   fetchProducts();
 });
 
-async function fetchProds() {
+async function fetchProducts() {
   let products = JSON.parse(localStorage.getItem('products'));
   if (localStorage.getItem('products') == null) {
     let response = await fetch('https://fakestoreapi.com/products');
