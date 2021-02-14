@@ -3,12 +3,9 @@
 class ProductItem extends HTMLElement {
   constructor() {
     super();
-    let item = document.createElement('li');
-    item.setAttribute('class', 'product');
-
-    const style = document.createElement('link');
-    style.setAttribute('rel', 'stylesheet');
-    style.setAttribute('href', 'styles/styles.cs');
+    
+    let item = document.createElement("li");
+    item.setAttribute("class", "product");
 
     let shadow = this.attachShadow({mode: 'open'});
     let image = document.createElement('img');
@@ -39,6 +36,10 @@ class ProductItem extends HTMLElement {
         alert('Added Item to Cart');
       }
     };
+
+    const style = document.createElement("link");
+    style.setAttribute("rel", "stylesheet");
+    style.setAttribute("href", "styles/styles.css");
 
     item.appendChild(image);
     item.appendChild(title);
