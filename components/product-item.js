@@ -18,20 +18,20 @@ class ProductItem extends HTMLElement {
 
     let cartCount = document.getElementById('cart-count');
     let button = document.createElement('button');
-    button.innerHTML = "Add to Cart";
+    button.textContent = "Add to Cart";
     button.onclick = () => {
       let cart = localStorage.getItem('cart').split(',');
       if (cart[this.id - 1] == "1") {
         cart[this.id - 1] = "0";
         localStorage.setItem('cart', cart);
-        button.innerHTML = "Add to Cart";
+        button.textContent = "Add to Cart";
         cartCount.textContent = parseInt(cartCount.textContent) - 1;
         alert('Removed Item from Cart');
       } 
       else {
         cart[this.id - 1] = "1";
         localStorage.setItem("cart", cart);
-        button.innerHTML = "Remove from Cart";
+        button.textContent = "Remove from Cart";
         cartCount.textContent = parseInt(cartCount.textContent) + 1;
         alert('Added Item to Cart');
       }

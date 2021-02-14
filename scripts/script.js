@@ -21,6 +21,7 @@ async function fetchProducts() {
 }
 
 function addProduct(product) {
+  let cartCount = document.getElementById('cart-count');
   let cart = localStorage.getItem('cart').split(',');
   let list = document.createElement('product-item');
   list.setAttribute('id', product.id);
@@ -37,6 +38,6 @@ function addProduct(product) {
   } 
   else {
     list.shadowRoot.querySelector('button').innerHTML = "Remove from Cart";
-    document.getElementById('cart-count').innerHTML++;
+    cartCount.textContent = parseInt(cartCount.textContent) + 1;
   }
 };
