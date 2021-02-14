@@ -21,7 +21,7 @@ async function fetchProducts() {
 }
 
 function addProduct(product) {
-  let cart = localStorage.getItem('cart');
+  let cart = localStorage.getItem('cart').split(',');
   let list = document.createElement('product-item');
   list.setAttribute('id', product.id);
   document.getElementById('product-list').appendChild(list);

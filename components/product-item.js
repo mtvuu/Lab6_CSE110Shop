@@ -20,7 +20,7 @@ class ProductItem extends HTMLElement {
     let button = document.createElement('button');
     button.innerHTML = "Add to Cart";
     button.onclick = () => {
-      let cart = localStorage.getItem('cart');
+      let cart = localStorage.getItem('cart').split(',');
       if (cart[this.id - 1] == "1") {
         cart[this.id - 1] = "0";
         localStorage.setItem('cart', cart);
